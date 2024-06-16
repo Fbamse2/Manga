@@ -1,0 +1,96 @@
+<!--
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>hello</h1>
+        <a onclick="openWindow('test - Kopi.html','preview')"><h1>Click me</h1></a>
+        <script>
+            function openWindow(Url, winName) {
+                window.open(Url, winName, "width=600,height=400");
+            }
+        </script>
+    </body>
+</html>
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Punch Man</title>
+    <style>
+        title {
+            display: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #444;
+        }
+
+        h1 {
+            text-align: left;
+        }
+
+        .chapter-content {
+            background-color: #666;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .Home_button {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #222;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th><a onclick="closeWindow()" class="Home_button">Home</a></th>
+
+        </tr>
+    </table>
+    <center>
+        <div class="chapter-content" style="font-size: 40px; color: red;">Chapters</div>
+    
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter 1: One Punch</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 2.html','preview')"><h2>Chapter 2: Crab and job hunting</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter number: name</h2></div>
+    </center>
+
+    <script>
+        function openWindow(Url, winName) {
+            window.open(Url, winName, "width=" + screen.width + ",height=" + screen.height);
+        }
+
+        function closeWindow(Url, winName) { window.close(Url, winName); }
+    </script>
+</body>
+
+</html>
