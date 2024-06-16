@@ -50,7 +50,7 @@ body {
 }
 
 .left-page-indicator, .right-page-indicator {
-    width: 200px; /* Fixed width */
+    width: 250px; /* Fixed width */
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
