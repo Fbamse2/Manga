@@ -99,3 +99,48 @@ body {
     background-color: #4CAF50;
     color: white;
 }
+
+/*Chapter Scroller*/
+.chapter_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.chapters-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.chapters-list::-webkit-scrollbar {
+    width: 16px;
+}
+
+.chapters-list::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.chapter-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chapter-item:hover {
+    background-color: #555;
+}
+/*Chapter Scroller*/
