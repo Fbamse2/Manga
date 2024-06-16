@@ -1,0 +1,290 @@
+<!--
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>hello</h1>
+        <a onclick="openWindow('test - Kopi.html','preview')"><h1>Click me</h1></a>
+        <script>
+            function openWindow(Url, winName) {
+                window.open(Url, winName, "width=600,height=400");
+            }
+        </script>
+    </body>
+</html>
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Library</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .search-bar {
+            margin-top: 1rem;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 0.5rem;
+            width: 200px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #ddd;
+            padding: 1rem;
+            width: 200px;
+            float: left;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #ccc;
+        }
+
+        /* Main content styles */
+        main {
+            margin-left: 220px; /* Sidebar width (200px) + padding (20px) */
+            padding: 1rem;
+            overflow: hidden; /* Clear floats */
+        }
+
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .manga-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .manga-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .manga-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .manga-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                float: none;
+                margin-bottom: 1rem;
+            }
+
+            main {
+                margin-left: 0;
+            }
+        }
+    </style>
+    <script>
+        // JavaScript for search and genre filtering functionality
+        function searchManga() {
+            let input = document.getElementById('search_name');
+            let filter = input.value.toUpperCase();
+            let mangaItems = document.getElementsByClassName('manga-item');
+
+            for (let i = 0; i < mangaItems.length; i++) {
+                let title = mangaItems[i].getElementsByTagName('h3')[0];
+                if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                    mangaItems[i].style.display = "";
+                } else {
+                    mangaItems[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterByGenre(genre) {
+            let mangaItems = document.getElementsByClassName('manga-item');
+            
+            if (genre === 'all') {
+                // Show all manga items
+                for (let i = 0; i < mangaItems.length; i++) {
+                    mangaItems[i].style.display = "";
+                }
+            } else {
+                // Hide all manga items first
+                for (let i = 0; i < mangaItems.length; i++) {
+                    mangaItems[i].style.display = "none";
+                }
+                // Show manga items with selected genre
+                let selectedGenreItems = document.getElementsByClassName(genre);
+                for (let i = 0; i < selectedGenreItems.length; i++) {
+                    selectedGenreItems[i].style.display = "";
+                }
+            }
+        }
+
+        function openWindow(Url, winName) {
+            window.open(Url, winName, "width=" + screen.width + ",height=" + screen.height);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Manga Library</h1>
+            <div class="search-bar">
+                <input type="text" id="search_name" placeholder="Search by title..." onkeyup="searchManga()">
+                <button onclick="searchManga()">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <div class="container">
+            <h2>Genres</h2>
+            <ul>
+                <li onclick="filterByGenre('all')">All Genres</li>
+                <li onclick="filterByGenre('action')">Action</li>
+                <li onclick="filterByGenre('adventure')">Adventure</li>
+                <li onclick="filterByGenre('fantasy')">Fantasy</li>
+                <li onclick="filterByGenre('romance')">Romance</li>
+                <li onclick="filterByGenre('comedy')">Comedy</li>
+                <li onclick="filterByGenre('superhero')">Superhero</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <div class="container">
+            <div class="content-container">
+                <div class="manga-grid">
+    
+                    <div class="manga-item superhero comedy action" onclick="openWindow('One Punch Man/One Punch Man Chapters.html','preview')">
+                        <img src="One Punch Man/Chapter 1/page 1.jpg" alt="One Punch Man">
+                        <!--<h3>One Punch Man</h3>-->
+                    </div>
+                    <div class="manga-item adventure">
+                        <img src="manga2.jpg" alt="Manga Title">
+                        <h3>Manga Title 2</h3>
+                    </div>
+                    <div class="manga-item fantasy">
+                        <img src="manga3.jpg" alt="Manga Title">
+                        <h3>Manga Title 3</h3>
+                    </div>
+                    <div class="manga-item romance">
+                        <img src="manga4.jpg" alt="Manga Title">
+                        <h3>Manga Title 4</h3>
+                    </div>
+    
+                    <!-- Add more manga items -->
+                    <div class="manga-item action">
+                        <img src="manga5.jpg" alt="Manga Title">
+                        <h3>Manga Title 5</h3>
+                    </div>
+                    <div class="manga-item adventure">
+                        <img src="manga6.jpg" alt="Manga Title">
+                        <h3>Manga Title 6</h3>
+                    </div>
+                    <div class="manga-item fantasy">
+                        <img src="manga7.jpg" alt="Manga Title">
+                        <h3>Manga Title 7</h3>
+                    </div>
+                    <div class="manga-item romance">
+                        <img src="manga8.jpg" alt="Manga Title">
+                        <h3>Manga Title 8</h3>
+                    </div>
+    
+                    <!-- Add more manga items as needed -->
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
