@@ -15,37 +15,39 @@
             <hr>
             <a onclick="openWindow('One Punch Man Chapters.html','preview')" class="button">Chapters List</a>
             <hr>
-            <a style="font-size: 23px;"> Page <span id="currentPage">1</span> of <span id="totalPages">15</span></a>
+            <a style="font-size: 23px;"> Page <span id="currentPage">1</span> of <span id="totalPages">0</span></a>
             <hr>
-            <a style="font-size: 13px;" onclick="openWindow('Chapter 1.html','preview')" class="button">Chapter 1</a>
-            <a style="font-size: 13px;" onclick="openWindow('Chapter 3.html','preview')" class="button">Chapter 3</a>
+            <div class="chapter_container">
+                <h2>Chapters</h2>
+                <ul class="chapters-list" id="chaptersList"></ul>
+            </div>
         </center>
     </div>
 
     <div class="manga-container">
         <ul class="manga-pages">
-            <li class="manga-page" id="page1"><img src="https://i.ibb.co/1d6xy02/page-1.jpg" alt="Page 1"></li>
-            <li class="manga-page" id="page2"><img src="https://i.ibb.co/rbMY0mq/page-2.jpg" alt="Page 2"></li>
-            <li class="manga-page" id="page3"><img src="https://i.ibb.co/Ptp6GyJ/page-3.jpg" alt="Page 3"></li>
-            <li class="manga-page" id="page4"><img src="https://i.ibb.co/HGLcwZv/page-4.jpg" alt="Page 4"></li>
-            <li class="manga-page" id="page5"><img src="https://i.ibb.co/JFv5Y5M/page-5.jpg" alt="Page 5"></li>
-            <li class="manga-page" id="page6"><img src="https://i.ibb.co/92Kqt11/page-6.jpg" alt="Page 6"></li>
-            <li class="manga-page" id="page7"><img src="https://i.ibb.co/pWFJ6C6/page-7.jpg" alt="Page 7"></li>
-            <li class="manga-page" id="page8"><img src="https://i.ibb.co/6ZNgmC0/page-8.jpg" alt="Page 8"></li>
-            <li class="manga-page" id="page9"><img src="https://i.ibb.co/SPvBxnT/page-9.jpg" alt="Page 9"></li>
-            <li class="manga-page" id="page10"><img src="https://i.ibb.co/hdJyKHc/page-10.jpg" alt="Page 10"></li>
-            <li class="manga-page" id="page11"><img src="https://i.ibb.co/NYHtXKk/page-11.jpg" alt="Page 11"></li>
-            <li class="manga-page" id="page12"><img src="https://i.ibb.co/WfsgJH2/page-12.jpg" alt="Page 12"></li>
-            <li class="manga-page" id="page13"><img src="https://i.ibb.co/JxYjDxT/page-13.jpg" alt="Page 13"></li>
-            <li class="manga-page" id="page14"><img src="https://i.ibb.co/jJfB404/page-14.jpg" alt="Page 14"></li>
-            <li class="manga-page" id="page15"><img src="https://i.ibb.co/5WS7zb7/page-15.jpg" alt="Page 15"></li>
-            <li class="manga-page" id="page16"><img src="https://i.ibb.co/hXW4ydb/page-16.jpg" alt="Page 16"></li>
+            <li class="manga-page" id="page1"><img src="https://i.ibb.co/PT0dWCX/page-1.jpg" alt="Page 1"></li>
+            <li class="manga-page" id="page2"><img src="https://i.ibb.co/TKw7ksT/page-2.jpg" alt="Page 2"></li>
+            <li class="manga-page" id="page3"><img src="https://i.ibb.co/x5Vtj0M/page-3.jpg" alt="Page 3"></li>
+            <li class="manga-page" id="page4"><img src="https://i.ibb.co/4gmZ72y/page-4.jpg" alt="Page 4"></li>
+            <li class="manga-page" id="page5"><img src="https://i.ibb.co/Y7rVqDv/page-5.jpg" alt="Page 5"></li>
+            <li class="manga-page" id="page6"><img src="https://i.ibb.co/CV4y9m2/page-6.jpg" alt="Page 6"></li>
+            <li class="manga-page" id="page7"><img src="https://i.ibb.co/Jzqrz3c/page-7.jpg" alt="Page 7"></li>
+            <li class="manga-page" id="page8"><img src="https://i.ibb.co/RcWJzFc/page-8.jpg" alt="Page 8"></li>
+            <li class="manga-page" id="page9"><img src="https://i.ibb.co/3NxpLfn/page-9.jpg" alt="Page 9"></li>
+            <li class="manga-page" id="page10"><img src="https://i.ibb.co/Cw2tmyR/page-10.jpg" alt="Page 10"></li>
+            <li class="manga-page" id="page11"><img src="https://i.ibb.co/KK25CqN/page-11.jpg" alt="Page 11"></li>
+            <li class="manga-page" id="page12"><img src="https://i.ibb.co/tzjj8s0/page-12.jpg" alt="Page 12"></li>
+            <li class="manga-page" id="page13"><img src="https://i.ibb.co/SNVZw6v/page-13.jpg" alt="Page 13"></li>
+            <li class="manga-page" id="page14"><img src="https://i.ibb.co/ggMF1cn/page-14.jpg" alt="Page 14"></li>
+            <li class="manga-page" id="page15"><img src="https://i.ibb.co/rx6hqGS/page-15.jpg" alt="Page 15"></li>
+            <li class="manga-page" id="page16"><img src="https://i.ibb.co/Jnvsbv0/page-16.jpg" alt="Page 16"></li>
         </ul>
     </div>
 
     <div class="right-page-indicator">
         <ul>
-            <li><a class="page_button active" href="#page1">Page 1</a></li>
+            <li><a class="page_button" href="#page1">Page 1</a></li>
             <li><a class="page_button" href="#page2">Page 2</a></li>
             <li><a class="page_button" href="#page3">Page 3</a></li>
             <li><a class="page_button" href="#page4">Page 4</a></li>
@@ -66,6 +68,7 @@
 </div>
 
 <script src="one punch man.js"></script>
+<script src="dynamic-chapters.js"></script>
 <script>
     chapter(2)
 </script>
