@@ -4,7 +4,7 @@
 const chapters = [
     { "chapter": "Chapter 1", "file": "Chapter 1.html", "title": "Punch 1: One Punch" },
     { "chapter": "Chapter 2", "file": "Chapter 2.html", "title": "Punch 2: Crab and job hunting" },
-    { "chapter": "Chapter 3", "file": "Chapter 3.html", "title": "" },
+    { "chapter": "Chapter 3", "file": "Chapter 3.html", "title": "Walking Disaster" },
     { "chapter": "Chapter 4", "file": "Chapter 4.html", "title": "" },
     { "chapter": "Chapter 5", "file": "Chapter 5.html", "title": "" },
     { "chapter": "Chapter 6", "file": "Chapter 6.html", "title": "" },
