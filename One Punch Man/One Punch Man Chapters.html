@@ -5,31 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Punch Man</title>
     <style>
-        title {
-            display: none;
+        /* Resetting default margins and padding */
+        body, h1, ul {
+            margin: 0;
+            padding: 0;
         }
+
+        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px auto;
-            padding: 0 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #555;
+        }
+
+        .chapter_container {
+            width: 80%;
+            max-width: 800px;
             background-color: #444;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
         }
 
-        h1 {
-            text-align: left;
-        }
-
-        .chapter-content {
+        .chapter_container > div {
+            font-size: 40px;
+            color: #ffffff;
             background-color: #666;
-            padding: 5px;
+            padding: 10px;
             border-radius: 10px;
-            cursor: pointer;
-            margin: 5px;
-            max-width: 600px;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
-        .Home_button {
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .chapters-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            max-height: 400px;
+            overflow-y: auto;
+            border-top: 1px solid #888;
+            margin-top: 10px;
+        }
+
+        .chapters-list::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .chapters-list::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+        }
+
+        .chapter-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .chapter-item:hover {
+            background-color: #555;
+        }
+
+        /* Button styles */
+        .main-link {
             cursor: pointer;
             display: inline-block;
             padding: 10px 20px;
@@ -38,37 +92,56 @@
             text-decoration: none;
             border-radius: 5px;
             border: 2px solid #222;
-            font-family: Arial, sans-serif;
             font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .main-link:hover {
+            background-color: #444;
+        }
+
+        .button, .page_button {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #222;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .button:hover, .page_button:hover {
+            background-color: #444;
+        }
+
+        .page_button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .page_button.active {
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <a onclick="closeWindow()" class="Home_button">Home</a>
-    <center>
-        <div style="font-size: 40px; color: #ffffff; background-color: #666; padding: 5px; border-radius: 10px; margin: 5px;">One Punch Man</div>
-    
-        <div class="chapter-content" onclick="openWindow('Chapter 1.html','preview')"><h2>Chapter 1: Punch 1: One Punch</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 2.html','preview')"><h2>Chapter 2: Punch 2: Crab and job hunting</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 3.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 4.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 5.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 6.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 7.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 8.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 9.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 10.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 11.html','preview')"><h2>Chapter number: name</h2></div>
-        <div class="chapter-content" onclick="openWindow('Chapter 12.html','preview')"><h2>Chapter number: name</h2></div>
-    </center>
+    <div class="chapter_container">
+        <a onclick="closeWindow()" class="main-link">Back to Manga Index</a>
+        <div>One Punch Man</div>
+        <h2>Chapters</h2>
+        <ul class="chapters-list" id="chaptersList"></ul>
+    </div>
 
+    <script src="dynamic-chapters.js"></script>
     <script>
-        function openWindow(Url, winName) {
-            window.open(Url, winName, "width=" + screen.width + ",height=" + screen.height);
-        }
-
-        function closeWindow(Url, winName) { window.close(Url, winName); }
+        function openWindow(Url, winName) { window.open(Url, winName, "width=" + screen.width + ",height=" + screen.height); }
+        function closeWindow() { window.close(); }
     </script>
 </body>
-
 </html>
